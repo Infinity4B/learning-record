@@ -15,7 +15,7 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible",
     },
-    locale: "zh-CN",
+    locale: "en-US",
     baseUrl: "infinity4b.github.io/learning-record",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
@@ -88,7 +88,7 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.NotFoundPage(),
       // Comment out CustomOgImages to speed up build time
-      Plugin.CustomOgImages(),
+      // Plugin.CustomOgImages(),
     ],
   },
 }
