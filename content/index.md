@@ -1,6 +1,11 @@
 ---
-title: Welcome to Quartz
+title: Welcome to 4B's Learning Blog
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+在这里记录一些学习相关的笔记，尽量把所学知识整合到一块，起到一个知识库的作用。
+
+更新记录：
+
+2025.9.22：完成设置、评论区构建，以及Github页面部署。
+
+2025.9.19：初步完成环境搭建。
