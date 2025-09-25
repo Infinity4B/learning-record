@@ -87,7 +87,7 @@ RT-1和RT-2在见过的任务上表现相似，都比其他模型好。但是在
 
 ## 能否CoT
 
-微调了一个PaLM-E的RT-2，希望能够提高语言和动作运用能力，能够实现更复杂的推理行为。在数据中额外加了Plan的步骤，例如`Instruction: I’m hungry. Plan: pick rxbar chocolate. Action: 1 128 124 136 121 158 111 255.`
+微调了一个PaLM-E的RT-2，希望能够提高语言和动作运用能力，能够实现更复杂的推理行为。在数据中额外加了Plan的步骤，例如`Instruction: I'm hungry. Plan: pick rxbar chocolate. Action: 1 128 124 136 121 158 111 255.`
 
 定性研究表明有CoT的RT-2可以回答更复杂的问题。
 

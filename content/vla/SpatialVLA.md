@@ -46,7 +46,7 @@ $$
 
 ### 自我3D位置编码
 
-提出的自我3D位置编码从相机帧中整合了深度信息和图片像素来构建一个自我为中心的3D坐标系统，避免了机器人与相机的外参矫正，并且适用于各种机器人设定。用ZoeDepath来计算深度图 $D$，并且通过反投影 $\pi^{-1}$ 获取自我为中心的3D坐标系统的像素的3D位置 $\mathbf{p}=\{x,y,z\}$ 。首先用SigLip视觉编码器提取2D语义视觉特征 $\mathbf{X}\in\mathbb{R}^{d\times h\times w}$ 来继承视觉和语言之间的对齐，并且在自我为中心的3D坐标系统中计算对应的3D位置 $\mathbf{P}\in\mathbb{R}^{3\times h\times w}$ 。自我为中心的3D位置 $\mathbf{P}$ 通过一个正弦函数 $\gamma(\cdot)$ 以及一个可学习的MLP后被编码成3D位置嵌入 $\mathbf{P'}\in\mathbb{R}^{d\times h\times w}$ 。自我为中心的3D空间表示 $\mathbf{O_{3d}}\in\mathbb{R}^{d\times h\times w}$ 是通过把3D位置嵌入 $\mathbf{P’}$ 和2D路径视觉token $\mathbf{X}$ 相加得到的：
+提出的自我3D位置编码从相机帧中整合了深度信息和图片像素来构建一个自我为中心的3D坐标系统，避免了机器人与相机的外参矫正，并且适用于各种机器人设定。用ZoeDepath来计算深度图 $D$，并且通过反投影 $\pi^{-1}$ 获取自我为中心的3D坐标系统的像素的3D位置 $\mathbf{p}=\{x,y,z\}$ 。首先用SigLip视觉编码器提取2D语义视觉特征 $\mathbf{X}\in\mathbb{R}^{d\times h\times w}$ 来继承视觉和语言之间的对齐，并且在自我为中心的3D坐标系统中计算对应的3D位置 $\mathbf{P}\in\mathbb{R}^{3\times h\times w}$ 。自我为中心的3D位置 $\mathbf{P}$ 通过一个正弦函数 $\gamma(\cdot)$ 以及一个可学习的MLP后被编码成3D位置嵌入 $\mathbf{P'}\in\mathbb{R}^{d\times h\times w}$ 。自我为中心的3D空间表示 $\mathbf{O_{3d}}\in\mathbb{R}^{d\times h\times w}$ 是通过把3D位置嵌入 $\mathbf{P'}$ 和2D路径视觉token $\mathbf{X}$ 相加得到的：
 
 $$
 \mathbf{O_{3d}}=\mathbf{X}+\mathbf{P'}=\mathbf{X}+\text{MLP}(\gamma(\mathbf{P}))
