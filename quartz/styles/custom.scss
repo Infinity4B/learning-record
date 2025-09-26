@@ -1,3 +1,18 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+:root {
+  --leftSidebarWidth: 400px; /* 调整为你想要的左栏宽度 */
+  --leftSidebarShift: -50px; /* 若不需要向左外扩，设为 0 */
+  --rightSidebarWidth: 300px; /* 右栏保留默认或按需调整 */
+}
+
+.page > #quartz-body {
+  grid-template-columns: var(--leftSidebarWidth) minmax(0, 1fr) var(--rightSidebarWidth);
+}
+
+.page > #quartz-body .sidebar.left {
+  width: var(--leftSidebarWidth);
+  margin-left: var(--leftSidebarShift);
+}
