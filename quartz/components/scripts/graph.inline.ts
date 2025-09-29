@@ -144,7 +144,14 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
   }
 
   const nodes = [...neighbourhood].map((url) => {
-    const text = url.startsWith("tags/") ? "#" + url.substring(5) : (data.get(url)?.title ?? url)
+    let text: string
+    if (url.startsWith("tags/")) {
+      text = "#" + url.substring(5)
+    } else {
+      // 使用简短的文件名而不是完整标题
+      const fileName = url.split('/').pop() || url
+      text = fileName.replace(/\.(md|markdown)$/i, '') // 移除文件扩展名
+    }
     return {
       id: url,
       text,
