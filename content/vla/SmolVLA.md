@@ -90,7 +90,7 @@ $$
 
 对于推理而言，主要延时来源于推理时间 $\mathbb{E}[\ell_S]$ ，两者之间发送延迟可以忽略不计。令 $\Delta t$ 为环境的控制循环时间，为了在运行时没有空闲时间，需要 $g \ge \frac{\mathbb{E}[\ell_S]/\Delta t}{n}$ 。
 
-![SmolVLA model2.png]]
+![[SmolVLA model2.png]]
 
 上图展示了动作块大小对于不同 $g$ 值随时间变化的图：
 
