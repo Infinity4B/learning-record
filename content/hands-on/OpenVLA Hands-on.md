@@ -190,3 +190,18 @@ class OpenVLAForActionPrediction(PrismaticForConditionalGeneration):
 ### 动作预测
 
 预测出离散token，并得到对应的归一化动作。根据unnorm_key从norm_stats得到low和high，反归一化将原来[-1,1]的bin_centers通过0.5 * (x + 1)映射到[0,1]，再缩放到[low,high]，得到连续动作。
+
+# 评测结果
+
+在LIBERO上评测结果如下：
+
+| **任务**   | **LIBERO-10** | **LIBERO-goal** | **LIBERO-object** | **LIBERO-spatial** |
+| -------- | ------------- | --------------- | ----------------- | ------------------ |
+| **评测长度** | 417           | 500             | 500               | 0                  |
+| **成功数量** | 230           | 394             | 350               | 0                  |
+| **成功率**  | 55.2%         | 78.8%           | 70%               | 0%                 |
+| **原文**   | 53.7 ± 1.3%   | 79.2 ± 1.0%     | 88.4 ± 0.8%       | 84.7 ± 0.9%        |
+
+LIBERO-spatial成功率为0： https://github.com/openvla/openvla/issues/299
+
+LIBERO-10没评测完是因为一直出现Segmentation fault (core dumped)： https://github.com/openvla/openvla/issues/288
