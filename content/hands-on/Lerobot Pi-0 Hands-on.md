@@ -554,7 +554,7 @@ def select_action(self, batch: dict[str, Tensor]) -> Tensor:
     return self._action_queue.popleft()
 ```
 
-默认action trunk为空，调用predict_action_trunk得到动作列表。如果不为空直接利用action trunk已有动作。
+默认action chunk为空，调用predict_action_chunk得到动作列表。如果不为空直接利用action chunk已有动作。
 
 ```python title="src/lerobot/policies/pi0/modeling_pi0.py#PI0Policy"
 @torch.no_grad()
@@ -590,7 +590,6 @@ def sample_actions(
     self, images, img_masks, lang_tokens, lang_masks, state, noise=None, num_steps=None
 ) -> Tensor:
     """Do a full inference forward and compute the action."""
-    import ipdb;ipdb.set_trace()
     
     if num_steps is None:
         num_steps = self.config.num_inference_steps
